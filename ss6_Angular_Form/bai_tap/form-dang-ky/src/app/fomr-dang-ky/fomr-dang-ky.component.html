@@ -1,0 +1,61 @@
+<h1 style="text-align: center">Form Dang Ky List</h1>
+<!--<div class="body">-->
+<!--&lt;!&ndash;  <table class="table table-success">&ndash;&gt;-->
+<!--&lt;!&ndash;    <tr>&ndash;&gt;-->
+<!--&lt;!&ndash;      <th>STT</th>&ndash;&gt;-->
+<!--&lt;!&ndash;      <th>Name</th>&ndash;&gt;-->
+<!--&lt;!&ndash;      <th>email</th>&ndash;&gt;-->
+<!--&lt;!&ndash;      <th>password</th>&ndash;&gt;-->
+<!--&lt;!&ndash;      <th>confirmPassword</th>&ndash;&gt;-->
+<!--&lt;!&ndash;      <th>age</th>&ndash;&gt;-->
+<!--&lt;!&ndash;      <th>gender</th>&ndash;&gt;-->
+<!--&lt;!&ndash;      <th>phone</th>&ndash;&gt;-->
+<!--&lt;!&ndash;    </tr>&ndash;&gt;-->
+<!--&lt;!&ndash;    <tr *ngFor="let temp of customer;index as i">&ndash;&gt;-->
+<!--&lt;!&ndash;      <td>{{i+1}}</td>&ndash;&gt;-->
+<!--&lt;!&ndash;      <td>{{temp.name}}</td>&ndash;&gt;-->
+<!--&lt;!&ndash;      <td>{{temp.email}}</td>&ndash;&gt;-->
+<!--&lt;!&ndash;      <td>{{temp.password}}</td>&ndash;&gt;-->
+<!--&lt;!&ndash;      <td>{{temp.confirmPassword}}</td>&ndash;&gt;-->
+<!--&lt;!&ndash;      <td>{{temp.age}}</td>&ndash;&gt;-->
+<!--&lt;!&ndash;      <td>{{temp.gender}}</td>&ndash;&gt;-->
+<!--&lt;!&ndash;      <td>{{temp.phone}}</td>&ndash;&gt;-->
+
+<!--&lt;!&ndash;    </tr>&ndash;&gt;-->
+<!--&lt;!&ndash;  </table>&ndash;&gt;-->
+<!--</div>-->
+
+<form [formGroup]="reactiveForm"(ngSubmit)="createForm()" >
+  <h2>Create Customer</h2>
+  <label>Id</label>
+  <input formControlName="id" type="text">
+  <p style="color:darkred" *ngIf="reactiveForm.controls.id.hasError('required')">Không được để trống</p>
+  <label>Name</label>
+  <input formControlName="name" type="text">
+  <p style="color:darkred" *ngIf="reactiveForm.controls.name.hasError('required')">Không được để trống</p>
+  <label>email</label>
+  <input formControlName="email" type="text">
+  <p style="color:darkred" *ngIf="reactiveForm.controls.email.hasError('required')">Không được để trống</p>
+  <label>password</label>
+  <input formControlName="password" type="text">
+  <p style="color:darkred" *ngIf="reactiveForm.controls.password.hasError('required')">Không được để trống</p>
+  <label>confirmPassword</label>
+  <input formControlName="confirmPassword" type="text">
+  <p style="color:darkred" *ngIf="reactiveForm.controls.confirmPassword.hasError('required')">Không được để trống</p>
+  <label>country</label>
+  <input formControlName="country" type="text">
+  <p style="color:darkred" *ngIf="reactiveForm.controls.country.hasError('required')">Không được để trống</p>
+  <label>age</label>
+  <input formControlName="age" type="text">
+  <p style="color:darkred" *ngIf="reactiveForm.controls.age.hasError('required')">Không được để trống</p>
+  <label>phone</label>
+  <input formControlName="phone" type="text">
+  <p style="color:darkred" *ngIf="reactiveForm.controls.age.hasError('required')">Không được để trống</p>
+
+  <label>gender</label>
+  <input formControlName="gender" type="text">
+  <p style="color:darkred" *ngIf="reactiveForm.controls.gender.hasError('required')">Không được để trống</p>
+  <input type="submit">
+
+
+</form>

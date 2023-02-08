@@ -1,0 +1,53 @@
+<table class="table table-success">
+  <tr>
+
+    <th>STT</th>
+    <th>startDate</th>
+    <th>endDate</th>
+    <th>deposit</th>
+    <th>customer</th>
+    <th>facility</th>
+    <th>totalPrice</th>
+    <th colspan="2">Cơ sở đính kèm</th>
+
+  </tr>
+  <tr >
+    <td th:text="${var.count+5*contractDtoPage.number}"></td>
+    <td th:text="${contract.startDate}"></td>
+    <td th:text="${contract.endDate}"></td>
+    <td th:text="${contract.deposit}"></td>
+    <td th:text="${contract.customerName}"></td>
+    <td th:text="${contract.facilityName}"></td>
+    <td th:text="${contract.total}"></td>
+    <td>
+      <button th:onclick="|idContractDetail(${contract.getId()})|"
+              class="btn btn-warning my-2 my-sm-0" type="button" data-bs-toggle="modal"
+              data-bs-target="#modalAdd2">
+        <span style="color: black">+</span>
+      </button>
+    </td>
+    <td>
+      <!--            <button class="btn btn-secondary my-2 my-sm-0 "-->
+      <!--                    th:attr="onclick=|showAttachDetail('${contract.getId()}')|" data-bs-toggle="modal"-->
+      <!--                    data-bs-target="#showAttachDetail">-->
+      <!--                <span class="text-light m-auto" style="color: black">Danh sách dịch vụ đính kèm</span>-->
+      <!--            </button>-->
+    </td>
+    <!--        <td>-->
+    <!--            <button th:onclick="|idContractDetail(${contract.getId()})|"-->
+    <!--                    class="btn btn-warning my-2 my-sm-0" type="button" data-bs-toggle="modal"-->
+    <!--                    data-bs-target="#modalAdd2">-->
+    <!--                <span style="color: black">+</span>-->
+    <!--            </button>-->
+    <!--        </td>-->
+    <!--        <td>-->
+    <!--            <button class="btn btn-secondary my-2 my-sm-0 "-->
+    <!--                    th:attr="onclick=|showAttachDetail('${contract.getId()}')|" data-bs-toggle="modal"-->
+    <!--                    data-bs-target="#showAttachDetail">-->
+    <!--                <span class="text-light m-auto" style="color: black">Danh sách dịch vụ đính kèm</span>-->
+    <!--            </button>-->
+    <!--        </td>-->
+
+
+  </tr>
+</table>

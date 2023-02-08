@@ -4,9 +4,10 @@ export interface Customer {
   id?: number;
   name?: string;
   date?: string;
-  gender?: number;
-  idCard?: string;
-  phoneNumber?: string;
+  gender?: string;
+  idCard?: number;
+  phoneNumber?: number;
+  email?: string;
   address?: string;
-customerType?: CustomerType;
+  customerType?: CustomerType;
 }

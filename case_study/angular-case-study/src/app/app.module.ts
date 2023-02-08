@@ -13,6 +13,7 @@ import { FacilityListComponent } from './component/facility/facility-list/facili
 import { CustomerAddComponent } from './component/customer/customer-add/customer-add.component';
 import { CustomerEditComponent } from './component/customer/customer-edit/customer-edit.component';
 import { CustomerListComponent } from './component/customer/customer-list/customer-list.component';
+import { ContractListComponent } from './component/contract-list/contract-list.component';
 
 @NgModule({
   declarations: [
@@ -26,13 +27,18 @@ import { CustomerListComponent } from './component/customer/customer-list/custom
     FacilityListComponent,
     CustomerAddComponent,
     CustomerEditComponent,
-    CustomerListComponent
+    CustomerListComponent,
+    ContractListComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule
   ],
   providers: [],
+  exports: [
+    FooterComponent,
+    HeaderComponent
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
