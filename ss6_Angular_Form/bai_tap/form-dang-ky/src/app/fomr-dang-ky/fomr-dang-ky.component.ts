@@ -8,7 +8,7 @@ import {FormControl, FormGroup, Validators} from "@angular/forms";
   styleUrls: ['./fomr-dang-ky.component.css']
 })
 export class FomrDangKyComponent implements OnInit {
-  formDangKi: FormDangKi = {
+  formRegister: FormDangKi = {
     id: 1,
     email: "LeHuy@gmail.com",
     password: "LeHuy@gmail.com",

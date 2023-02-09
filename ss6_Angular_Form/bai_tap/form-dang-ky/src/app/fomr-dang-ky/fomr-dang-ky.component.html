@@ -42,9 +42,15 @@
   <label>confirmPassword</label>
   <input formControlName="confirmPassword" type="text">
   <p style="color:darkred" *ngIf="reactiveForm.controls.confirmPassword.hasError('required')">Không được để trống</p>
-  <label>country</label>
-  <input formControlName="country" type="text">
-  <p style="color:darkred" *ngIf="reactiveForm.controls.country.hasError('required')">Không được để trống</p>
+  <label for="country">Country: </label>
+  <select id="country" formControlName="country">
+    <option *ngFor="let c of country" [ngValue]="c.name">{{c.name}}</option>
+  </select>
+  <p class="text-danger"
+     *ngIf="!reactiveForm.controls.country?.valid && (reactiveForm.controls.country?.dirty
+    ||reactiveForm.controls.country?.touched)">
+    Country is not valid.
+  </p>
   <label>age</label>
   <input formControlName="age" type="text">
   <p style="color:darkred" *ngIf="reactiveForm.controls.age.hasError('required')">Không được để trống</p>
