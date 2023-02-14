@@ -1,0 +1,68 @@
+{
+  "customerType": [
+    {
+      "id": 1,
+      "name": "Diamond"
+    },
+    {
+      "id": 2,
+      "name": "Platinium"
+    },
+    {
+      "id": 3,
+      "name": "Gold"
+    },
+    {
+      "id": 4,
+      "name": "Silver"
+    },
+    {
+      "id": 5,
+      "name": "Member"
+    }
+  ],
+  "customer": [
+    {
+      "id": 2,
+      "name": "Phạm Xuân Diệu ",
+      "date": "1992-08-08",
+      "gender": "nam",
+      "idCard": "865342123",
+      "phoneNumber": "0954333333",
+      "email": "xuandieu92@gmail.com",
+      "address": "K77/22 Thái Phiên, Quảng Trị",
+      "customerType": {
+        "id": 1,
+        "name": "Diamond"
+      }
+    },
+    {
+      "id": 3,
+      "name": "Hoàng Trần Nhi Nhi",
+      "date": "1995-12-09",
+      "gender": "nữ",
+      "idCard": "795453345",
+      "phoneNumber": "0312345678",
+      "email": "nhinhi123@gmail.com",
+      "address": "224 Lý Thái Tổ, Gia Lai",
+      "customerType": {
+        "id": 4,
+        "name": "Silver"
+      }
+    },
+    {
+      "id": 4,
+      "name": "Tôn Nữ Mộc Châu",
+      "date": "2005-12-06",
+      "gender": "nữ",
+      "idCard": "732434215",
+      "phoneNumber": "0988888844",
+      "email": "tonnuchau@gmail.com",
+      "address": "37 Yên Thế, Đà Nẵng",
+      "customerType": {
+        "id": 4,
+        "name": "Silver"
+      }
+    }
+  ]
+}

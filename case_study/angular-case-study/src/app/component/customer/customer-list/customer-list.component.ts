@@ -1,5 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Customer} from "../../../model/customer";
+import {CustomerType} from "../../../model/customer-type";
+import {Router} from "@angular/router";
+import {CustomerService} from "../../../service/customer.service";
+import {CustomerTypeService} from "../../../service/customer-type.service";
 
 @Component({
   selector: 'app-customer-list',
@@ -7,33 +11,35 @@ import {Customer} from "../../../model/customer";
   styleUrls: ['./customer-list.component.css']
 })
 export class CustomerListComponent implements OnInit {
-  customerList: Customer[]=[
-    {
-      id: 1,
-      name: 'Huynl4',
-      date: '11 / 11 / 2000',
-      gender: "Nam",
-      idCard: 121212122,
-      phoneNumber: 111111111,
-      email: 'huynl4@yahoo.com',
-      address: 'Canada',
-      customerType: {id: 1, name: 'Nghèo'},
-    },
-    {
-      id: 1,
-      name: 'Bảo Hx',
-      date: '11 / 11 / 2000',
-      gender: "Nam",
-      idCard: 121212122,
-      phoneNumber: 111111111,
-      email: 'huynl4@yahoo.com',
-      address: 'Canada',
-      customerType: {id: 1, name: 'Nghèo'},
-    }
-  ]
-  constructor() { }
+  customerList: Customer[] = [];
+  item: Customer = {};
+  page: number = 0;
+  customerTypeList: CustomerType[] = [];
 
-  ngOnInit(): void {
+  constructor(private customerService: CustomerService,
+              private customerTypeService: CustomerTypeService,
+              private router: Router) {
   }
 
+  ngOnInit(): void {
+    this.getAll()
+  }
+
+  getAll() {
+    this.customerService.getAllCustomer().subscribe(next => {
+      console.log(next);
+      this.customerList = next;
+    })
+    this.customerTypeService.getAllCustomerType().subscribe(next => {
+      console.log(next);
+      this.customerTypeList = next;
+    })
+  }
+
+  delete(id: number) {
+    this.customerService.deleteCustomer(this.item.id).subscribe(next=>{
+      alert("xóa thành công");
+      this.ngOnInit();
+    })
+  }
 }

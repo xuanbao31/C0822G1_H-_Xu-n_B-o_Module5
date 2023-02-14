@@ -1,5 +1,5 @@
 <h1 style="text-align: center">Customer List</h1>
-<a role="button" class="btn btn-primary" href="createCustomer.html">Add To Customer List</a>
+<button class="btn btn-info" routerLink="create" style="text-align: center"> Thêm mới</button>
 <div class="body">
   <table class="table table-success">
     <tr>
@@ -16,8 +16,8 @@
 
 
     </tr>
-    <tr *ngFor="let temp of customerList;index as i">
-      <td>{{i+1}}</td>
+    <tr *ngFor="let temp of customerList">
+      <td>{{temp.id}}</td>
       <td>{{temp.name}}</td>
       <td>{{temp.date}}</td>
       <td>{{temp.gender}}</td>
@@ -25,11 +25,35 @@
       <td>{{temp.phoneNumber}}</td>
       <td>{{temp.email}}</td>
       <td>{{temp.address}}</td>
-      <td>{{temp.customerType.name}}</td>
+      <td>{{temp.customerType?.name}}</td>
 
-      <td><a class="btn btn-primary" href="editCustomer.html">Edit</a></td>
-      <td><a class="btn btn-danger">Delete</a></td>
+      <td><a class="btn btn-primary" [routerLink]="['update/', temp.id]" >Edit</a></td>
+      <td>
+        <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                (click)="item=temp">
+          Xóa
+        </button>
+      </td>
+
     </tr>
   </table>
 </div>
 
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Xoa Customer</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>bạn muốn xóa {{item.name}} không</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">dong</button>
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="delete(item.id)">xoa
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
