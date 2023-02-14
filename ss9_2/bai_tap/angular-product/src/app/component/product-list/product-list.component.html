@@ -1,0 +1,72 @@
+<div>
+  <form class="d-flex" method="get" action="" method="POST" [formGroup]="searchForm" (ngSubmit)="searchProduct()">
+    <input placeholder="Name" class="form-control me-2" type="text" name="name" formControlName="name">
+    <select class="form-control me-2" name="productType" formControlName="productType">
+      <option *ngFor="let item of productTypeList" [ngValue]="item.name">{{item.name}}</option>
+    </select>
+    <input class="btn btn-outline-success" type="submit" name="action" value="CHECK AVAILABILITY">
+    <input class="btn btn-outline-success" type="button" (click)="resetPage()" value="RESEST" STYLE="margin-left: 5px">
+  </form>
+</div>
+<button class="btn btn-info" routerLink="/create"> Thêm mới</button>
+<table class="table table-hover">
+  <thead>
+  <tr >
+    <th>STT</th>
+    <th>Name</th>
+    <th>Price</th>
+    <th>Amount</th>
+    <th>Color</th>
+    <th>ProductType</th>
+    <th>Xoas</th>
+    <th>Sua</th>
+  </tr>
+  </thead>
+  <tbody>
+<!--  <tr *ngFor="let temp of productList;index as i" style="text-align: center">-->
+  <tr *ngFor="let temp of productList  | paginate: { itemsPerPage: 3, currentPage: page}">
+    <td>{{temp.id}}</td>
+    <td>{{temp.name}}</td>
+    <td>{{temp.price}}</td>
+    <td>{{temp.amount}}</td>
+    <td>{{temp.color}}</td>
+    <td>{{temp.productType.name}}</td>
+    <td>
+      <!-- Button trigger modal -->
+      <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#exampleModal"
+              (click)="product=temp">
+        Xóa
+      </button>
+
+    </td>
+    <td>
+      <button class="btn btn-outline-warning" [routerLink]="['update',temp.id]">Sửa</button>
+    </td>
+
+  </tr>
+  </tbody>
+
+
+</table>
+<pagination-controls (pageChange)="page = $event" style="text-align: right"></pagination-controls>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Xoa Customer</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>bạn muốn xóa {{product.name}} không</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">dong</button>
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="deleteProduct(product.id)">xoa
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

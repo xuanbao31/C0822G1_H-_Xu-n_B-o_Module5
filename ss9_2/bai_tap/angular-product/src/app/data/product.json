@@ -1,0 +1,58 @@
+{
+  "productType": [
+    {
+      "id": 1,
+      "name": "nike"
+    },
+    {
+      "id": 2,
+      "name": "adidas"
+    }
+  ],
+  "product": [
+    {
+      "id": 1,
+      "name": "stanSmith",
+      "price": "150$",
+      "amount": "34",
+      "color": "green mix white",
+      "productType": {
+        "id": 2,
+        "name": "adidas"
+      }
+    },
+    {
+      "id": 2,
+      "name": "stanSmith2",
+      "price": "150$",
+      "amount": "3",
+      "color": "green mix white",
+      "productType": {
+        "id": 2,
+        "name": "adidas"
+      }
+    },
+    {
+      "id": 3,
+      "name": "nike",
+      "price": "200$",
+      "amount": "2",
+      "color": "red",
+      "productType": {
+        "id": 2,
+        "name": "adidas"
+      }
+    },
+    {
+      "id": 4,
+      "name": "jordan",
+      "price": "235",
+      "amount": "2",
+      "color": "red",
+      "productType": {
+        "id": 1,
+        "name": "nike"
+      }
+    }
+  ]
+}

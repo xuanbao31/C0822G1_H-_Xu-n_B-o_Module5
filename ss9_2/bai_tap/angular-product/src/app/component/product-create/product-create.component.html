@@ -1,0 +1,41 @@
+<h1>Tạo sản phẩm mới</h1>
+<form [formGroup]="productForm" (ngSubmit)="submit()">
+  <table>
+
+      <tr>
+        <td>
+          <label class="form-label"> Loại Khách hàng</label>
+          <select class="form-control form-control-lg" formControlName="productType">
+            <option *ngFor="let item of productType" [ngValue]="item"> {{item.name}}</option>
+          </select>
+
+        </td>
+
+      </tr>
+    <tr>
+      <td>Mã sản phẩm:</td>
+      <td><input type="number" formControlName="id"></td>
+    </tr>
+    <tr>
+      <td>Tên sản phẩm:</td>
+      <td><input type="text" formControlName="name"></td>
+    </tr>
+    <tr>
+      <td>Giá sản phẩm</td>
+      <td><input type="text" formControlName="price"></td>
+    </tr>
+    <tr>
+      <td>Amount</td>
+      <td><input type="text" formControlName="amount"></td>
+    </tr>
+    <tr>
+      <td>Color</td>
+      <td><input type="text" formControlName="color"></td>
+    </tr>
+
+    <tr>
+      <td></td>
+      <td><button>Tạo mới</button></td>
+    </tr>
+  </table>
+</form>
